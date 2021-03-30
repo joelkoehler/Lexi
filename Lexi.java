@@ -1,4 +1,7 @@
 import javax.naming.OperationNotSupportedException;
+import lexi.*;
+import lexiwidget.*;
+import lexi.Character;
 
 public class Lexi {
     

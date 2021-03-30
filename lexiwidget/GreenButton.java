@@ -1,3 +1,5 @@
+package lexiwidget;
+
 import java.awt.Point;
 
 public class GreenButton extends Button {

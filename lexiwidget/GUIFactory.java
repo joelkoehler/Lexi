@@ -1,3 +1,5 @@
+package lexiwidget;
+
 public abstract class GUIFactory {
 
     private static GUIFactory single = null;

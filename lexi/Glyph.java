@@ -1,3 +1,4 @@
+package lexi;
 import javax.naming.OperationNotSupportedException;
 import java.awt.Point;
 

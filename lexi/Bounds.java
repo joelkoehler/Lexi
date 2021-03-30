@@ -1,3 +1,5 @@
+package lexi;
+
 import java.awt.Point;
 
 public class Bounds {

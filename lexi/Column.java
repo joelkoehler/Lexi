@@ -1,10 +1,11 @@
+package lexi;
 import java.awt.Point;
 import javax.naming.OperationNotSupportedException;
 import java.util.ArrayList;
 
-public class Row extends Composition {
+public class Column extends Composition {
 
-    public Row(Compositor compositor) {
+    public Column(Compositor compositor) {
         setParent(null);
         getBounds().setDims(0,0);
         Point point = new Point(0,0);
@@ -26,13 +27,13 @@ public class Row extends Composition {
         int width = 0;
         int height = 0;
 
-        Glyph child = super.getChildren().get(0);
+        Glyph child = getChildren().get(0);
         try {
             for(int i = 1; i > -1; i++) {
-                width += child.getBounds().width();
-                height = Math.max(height, child.getBounds().height()); 
+                width = Math.max(width, child.getBounds().width());
+                height += child.getBounds().height(); 
                 child = this.child(i);
-            }              
+            }
         }
         catch (Exception e) {
             getBounds().setDims(width, height);
@@ -44,12 +45,12 @@ public class Row extends Composition {
     }
 
     public Point moveCursor(Point cursor, Glyph child) {
-        cursor.x = child.getBounds().point().x + child.getBounds().width();
+        cursor.y = child.getBounds().point().y + child.getBounds().height();
         return cursor;
     }
 
     public void adjustBounds(Point cursor) {
-        getBounds().setDims(cursor.x - getBounds().point().x, getBounds().height());
+        getBounds().setDims(getBounds().width(), cursor.y - getBounds().point().y);
     }
 
 }

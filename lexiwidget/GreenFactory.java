@@ -1,3 +1,5 @@
+package lexiwidget;
+
 public class GreenFactory extends GUIFactory {
 
     private GreenFactory() {
@@ -7,14 +9,6 @@ public class GreenFactory extends GUIFactory {
     public static GreenFactory instance() {
         return new GreenFactory();
     }
-
-    // public Button createButton() {
-    //     return new GreenButton();
-    // }
-
-    // public Label createLabel() {
-    //     return new GreenLabel();
-    // }
 
     protected Label labelFactoryMethod() {
         return new GreenLabel();

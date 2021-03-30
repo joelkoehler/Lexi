@@ -1,3 +1,4 @@
+package lexi;
 public interface Window {
 
     void drawCharacter(char c, int x, int y);

@@ -1,3 +1,4 @@
+package lexi;
 import java.util.ArrayList;
 
 import javax.naming.OperationNotSupportedException;

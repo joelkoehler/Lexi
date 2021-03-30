@@ -1,3 +1,4 @@
+package lexi;
 import java.awt.Point;
 
 public class Rectangle extends Glyph {
