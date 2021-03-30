@@ -10,7 +10,6 @@ public class Border extends Embellishment {
 
     public Border (Compositor compositor, int thickness) {
         this.thickness = thickness;
-
         super.setParent(null);
         super.getBounds().setDims(0,0);
         Point point = new Point(0,0);

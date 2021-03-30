@@ -1,5 +1,7 @@
 package lexiwidget;
 
+import lexi.Compositor;
+
 public class RedFactory extends GUIFactory {
 
     private RedFactory() {
@@ -10,12 +12,12 @@ public class RedFactory extends GUIFactory {
         return new RedFactory();
     }
 
-    protected Label labelFactoryMethod() {
-        return new RedLabel();
+    protected Label labelFactoryMethod(Compositor compositor) {
+        return new RedLabel(compositor);
     }
 
-    protected Button buttonFactoryMethod() {
-        return new RedButton();
+    protected Button buttonFactoryMethod(Compositor compositor) {
+        return new RedButton(compositor);
     }
 
 }

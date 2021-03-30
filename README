@@ -1,21 +1,22 @@
 Name: Joel Koehler
 Class: CS472 (Object-Oriented Design Patterns)
 Instructor: Jim B.
-Assignment: HW2 - Lexi
+Assignment: HW3 - Lexi
 
 HOW TO RUN PROGRAM:
 $ javac *.java
 $ java Lexi
 
 WHAT I ADDED:
-I used the Decorator pattern to add scrollbars and borders. I also refactored my HW1
-code to better fit OO practices.
+I used AbstractFactory, FactoryMethod, and Singleton patterns.
 
 WHAT I GOT STUCK ON:
-The code base is getting so large that it was difficult for me to understand how it
-all fits together now. I understand it conceptually, but tracing method calls is much more
-confusing in Object Oriented. I had a lot of issues with bounds and sizing as well.
+The interaction of the AbstractFactory and Singleton patterns is 
+what I spent the most time on for this homework. The concept of 
+a singleton calling a constructor made no sense in an Abstract Class,
+so figuring out how to get it to play nice with the subclasses was key.
+This homework went the best of any so far, so that's encouraging. 
 
-SCREENSHOT:
-I took a screenshot of the example in Lexi.java. I have several tests in Lexi.java
-to demonstrate iterative feature development.
+ISSUES:
+I had to hardcode "green" or "red" in GUIFactory in order for this to run for me.
+I have noted this in the code (line 15/16 of GUIFactory).

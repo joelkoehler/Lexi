@@ -5,6 +5,10 @@ import javax.naming.OperationNotSupportedException;
 
 public class Embellishment extends Composition {
 
+    // public Embellishment(Glyph contents) {
+	// 	super();
+	// }
+
     public void compose() {
         super.compose();        
     }

@@ -1,13 +1,20 @@
 package lexiwidget;
 
+import lexi.Compositor;
+
+// this is the abstract factory
 public abstract class GUIFactory {
 
     private static GUIFactory single = null;
 
+    // this method enforces the singleton pattern
     public static GUIFactory instance()
     {
         if (single == null) {
-            String s=System.getenv("LexiWidget");
+
+            //String s=System.getenv("LexiWidget"); // NOTE: had to use line below instead for testing!!
+            String s="Red"; // had to hardcode this to get it to work
+
             if (s!=null && s.equals("Green")) {
                 single = GreenFactory.instance();
             }
@@ -18,15 +25,16 @@ public abstract class GUIFactory {
         return single;
     }
 
-    public final Button createButton() {
-        return buttonFactoryMethod();
+    public final Button createButton(Compositor compositor) {
+        return buttonFactoryMethod(compositor);
     }
 
-    public final Label createLabel() {
-        return labelFactoryMethod();
+    public final Label createLabel(Compositor compositor) {
+        return labelFactoryMethod(compositor);
     }
     
-    protected abstract Label labelFactoryMethod();
-    protected abstract Button buttonFactoryMethod();
+    // these are the factory methods that will be made concrete in the subclasses
+    protected abstract Label labelFactoryMethod(Compositor compositor);
+    protected abstract Button buttonFactoryMethod(Compositor compositor);
 
 }
