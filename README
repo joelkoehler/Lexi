@@ -1,0 +1,21 @@
+Name: Joel Koehler
+Class: CS472 (Object-Oriented Design Patterns)
+Instructor: Jim B.
+Assignment: HW2 - Lexi
+
+HOW TO RUN PROGRAM:
+$ javac *.java
+$ java Lexi
+
+WHAT I ADDED:
+I used the Decorator pattern to add scrollbars and borders. I also refactored my HW1
+code to better fit OO practices.
+
+WHAT I GOT STUCK ON:
+The code base is getting so large that it was difficult for me to understand how it
+all fits together now. I understand it conceptually, but tracing method calls is much more
+confusing in Object Oriented. I had a lot of issues with bounds and sizing as well.
+
+SCREENSHOT:
+I took a screenshot of the example in Lexi.java. I have several tests in Lexi.java
+to demonstrate iterative feature development.
