@@ -1,7 +1,11 @@
+//package window;
 package lexi;
-public abstract class Window implements ApplicationWindow {
 
-    private WindowImp imp;
+// Bridge(151): Implementor
+
+// Bridge(151): Implementor
+
+public interface WindowImp {
 
     void drawCharacter(char c, int x, int y);
     void drawRectangle(int x, int y, int width, int height);
@@ -9,7 +13,7 @@ public abstract class Window implements ApplicationWindow {
     int charWidth(char c);
     int charHeight(char c);
 
-    void setContents(Glyph glyph);
+    void setContents();
 
     void addBorder(int x1, int y1, int x2, int y2, int width);
     void addScrollBar(int x, int y, int width, int height);
@@ -17,5 +21,10 @@ public abstract class Window implements ApplicationWindow {
     void drawButton(int x, int y, int width, int height, String color);
     void drawLabel(int x, int y, int width, int height, String color);
 
-    void draw();
+    int getFontSize();
+    void setFontSize(int size);
+
+    void repaint();
+
 }
+
