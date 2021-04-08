@@ -12,8 +12,8 @@ public abstract class GUIFactory {
     {
         if (single == null) {
 
-            //String s=System.getenv("LexiWidget"); // NOTE: had to use line below instead for testing!!
-            String s="Red"; // had to hardcode this to get it to work
+            String s=System.getenv("LexiWidget"); // NOTE: had to use line below instead for testing!!
+            //String s="Red"; // had to hardcode this to get it to work
 
             if (s!=null && s.equals("Green")) {
                 single = GreenFactory.instance();

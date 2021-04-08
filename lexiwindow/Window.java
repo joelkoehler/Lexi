@@ -2,10 +2,12 @@ package lexiwindow;
 
 import lexi.Glyph;
 
+// Bridge(151): Abstraction
+
 public abstract class Window {
 
     protected WindowImp imp;
-    private Glyph root;
+    private Glyph root = null;
 
     public void drawCharacter(char c, int x, int y) {
         imp.drawCharacter(c, x, y);
@@ -23,10 +25,9 @@ public abstract class Window {
         return imp.charHeight(c);
     }
 
-    void setContents(Glyph root) {
+    public void setContents(Glyph root) {
         this.root = root;
         imp.setContents();
-        draw();
     }
     
     public void addBorder(int x1, int y1, int x2, int y2, int width) {
@@ -43,7 +44,9 @@ public abstract class Window {
         imp.drawLabel(x, y, width, height, color);
     }
 
-    void draw() {
-        root.draw(this);
+    public void draw() {
+        if (root != null) {
+            root.draw(this);
+        }
     }
 }

@@ -1,6 +1,7 @@
 package lexiwindow;
 
 // Bridge(151): Implementor
+// AbstractFactory(87): AbstractProduct
 
 public interface WindowImp {
 

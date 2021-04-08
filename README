@@ -1,22 +1,26 @@
 Name: Joel Koehler
 Class: CS472 (Object-Oriented Design Patterns)
 Instructor: Jim B.
-Assignment: HW3 - Lexi
+Assignment: HW4 - Lexi
 
 HOW TO RUN PROGRAM:
 $ javac *.java
-$ java Lexi
+$ LexiWindow="x" LexiWidget="y" java Lexi
+    (where x is either "Swing" or "Awt", and y is either "Red" or "Green")
 
 WHAT I ADDED:
-I used AbstractFactory, FactoryMethod, and Singleton patterns.
+I added Bridge(151) and used AbstractFactory(87) and FactoryMethod(107) again, 
+though in a slightly different way (Bridge(151)'s RefinedAbstraction interacts 
+with AbstractFactory(87)'s AbstractFactory).
 
 WHAT I GOT STUCK ON:
-The interaction of the AbstractFactory and Singleton patterns is 
-what I spent the most time on for this homework. The concept of 
-a singleton calling a constructor made no sense in an Abstract Class,
-so figuring out how to get it to play nice with the subclasses was key.
-This homework went the best of any so far, so that's encouraging. 
+I had issues with draw, where seemingly randow UI elements would be colored. 
+Sometimes is was the button/label I wanted to be colored, and other times it was
+a glyph they contained. Sometimes no color would show up at all, and sometimes 
+I got a null pointer from _graphics. It was all very inconsistent. I fixed it by
+only allowing the concrete products (concrete windows) to call draw. This makes
+sense because the higher levels of abstraction should not have to deal with it.
 
-ISSUES:
-I had to hardcode "green" or "red" in GUIFactory in order for this to run for me.
-I have noted this in the code (line 15/16 of GUIFactory).
+NOTE:
+I split my UML into two halves since I don't have paper big enough to include
+everything in one view and still have it be clear enough to read.

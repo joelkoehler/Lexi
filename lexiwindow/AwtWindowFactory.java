@@ -1,5 +1,9 @@
 package lexiwindow;
 
+//Bridge(151): creates a ConcreteImplementor
+//AbstractFactory(87): ConcreteFactory2
+//FactoryMethod(107): ConcreteCreator
+
 
 public class AwtWindowFactory extends WindowFactory {
 

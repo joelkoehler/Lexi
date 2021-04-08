@@ -1,6 +1,8 @@
-
 package lexiwindow;
 
+//AbstractFactory(87): AbstractFactory
+//FactoryMethod(107): Creator
+//Singleton(127): Singleton
 
 public abstract class WindowFactory {
 
@@ -9,8 +11,8 @@ public abstract class WindowFactory {
     public static WindowFactory instance() {
         if (single == null) {
 
-            //String s=System.getenv("LexiWindow"); // NOTE: had to use line below instead for testing!!
-            String s="Swing"; // had to hardcode this to get it to work
+            String s=System.getenv("LexiWindow");
+            //String s="Swing"; // had to hardcode this to get it to work
 
             if (s!=null && s.equals("Swing")) {
                 single = SwingWindowFactory.instance();
