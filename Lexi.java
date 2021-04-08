@@ -2,6 +2,10 @@ import javax.naming.OperationNotSupportedException;
 import lexi.*;
 import lexiwidget.*;
 import lexi.Character;
+import lexiwindow.ApplicationWindow;
+import lexiwindow.Window;
+
+// Bridge(151), AbstractFactory(87): Client
 
 public class Lexi {
     
@@ -10,7 +14,7 @@ public class Lexi {
     }
 
     public static void test1() {
-        Window w = new SwingWindow("Lexi");
+        Window w = new ApplicationWindow("Lexi");
         SimpleCompositor sc1 = new SimpleCompositor(w);
         SimpleCompositor sc2 = new SimpleCompositor(w);
         SimpleCompositor sc3 = new SimpleCompositor(w);
@@ -49,7 +53,7 @@ public class Lexi {
     }
 
     public static void test2() {
-        Window w = new SwingWindow("Lexi");
+        Window w = new ApplicationWindow("Lexi");
         SimpleCompositor sc1 = new SimpleCompositor(w);
         SimpleCompositor sc2 = new SimpleCompositor(w);
         SimpleCompositor sc3 = new SimpleCompositor(w);
@@ -88,7 +92,7 @@ public class Lexi {
     }
 
     public static void test3() {
-        Window w = new SwingWindow("Lexi");
+        Window w = new ApplicationWindow("Lexi");
         SimpleCompositor sc1 = new SimpleCompositor(w);
         SimpleCompositor sc2 = new SimpleCompositor(w);
         SimpleCompositor sc3 = new SimpleCompositor(w);
@@ -128,7 +132,7 @@ public class Lexi {
     }
 
     public static void testLegacy() {
-        Window w = new SwingWindow("Lexi");
+        Window w = new ApplicationWindow("Lexi");
         SimpleCompositor sc1 = new SimpleCompositor(w);
         SimpleCompositor sc2 = new SimpleCompositor(w);
         SimpleCompositor sc3 = new SimpleCompositor(w);
@@ -163,7 +167,7 @@ public class Lexi {
     }
 
     public static void testButtonLabel() {
-        Window w = new SwingWindow("Lexi");
+        Window w = new ApplicationWindow("Lexi");
         SimpleCompositor sc1 = new SimpleCompositor(w);
         SimpleCompositor sc2 = new SimpleCompositor(w);
         SimpleCompositor sc3 = new SimpleCompositor(w);
@@ -208,7 +212,7 @@ public class Lexi {
     }
 
     public static void testButtonLabel2() {
-        Window w = new SwingWindow("Lexi");
+        Window w = new ApplicationWindow("Lexi");
         SimpleCompositor sc1 = new SimpleCompositor(w);
         SimpleCompositor sc2 = new SimpleCompositor(w);
         SimpleCompositor sc3 = new SimpleCompositor(w);

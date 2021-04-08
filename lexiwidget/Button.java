@@ -1,8 +1,9 @@
 package lexiwidget;
 
 import lexi.Embellishment;
-import lexi.Window;
 import lexi.*;
+import lexiwindow.Window;
+
 
 
 public abstract class Button extends Embellishment {

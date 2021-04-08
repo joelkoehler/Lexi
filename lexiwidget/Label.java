@@ -1,7 +1,7 @@
 package lexiwidget;
 
 import lexi.Embellishment;
-import lexi.Window;
+import lexiwindow.Window;
 
 public abstract class Label extends Embellishment {
 

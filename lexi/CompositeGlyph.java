@@ -3,6 +3,8 @@ import java.util.ArrayList;
 
 import javax.naming.OperationNotSupportedException;
 
+import lexiwindow.Window;
+
 public abstract class CompositeGlyph extends Glyph {
     
     private ArrayList<Glyph> children;

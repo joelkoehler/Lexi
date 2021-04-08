@@ -1,47 +1,47 @@
-package window;
+package lexiwindow;
 
 import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 
-// Bridge(151): ConcreteImplementorB
-// AbstractFactory(87): ProductA2
+// Bridge(151): ConcreteImplementorA
+// AbstractFactory(87): ProductA1
 // FactoryMethod(107): ConcreteProduct
 
-class AwtWindow extends WindowImp {
+class SwingWindow implements WindowImp {
 
     private final int width=200;
     private final int height=200;
 
     private Window _window;
     private Pane _pane;
-    private Frame _frame;
+    private JFrame _jFrame;
     private Color _color;
     private Graphics _graphics;
     private FontMetrics _fm;
 
-    private class Pane extends Panel {
+    private class Pane extends JPanel {
 
-	public void paint(Graphics graphics) {
-	    super.paint(graphics);
+	public void paintComponent(Graphics graphics) {
+	    super.paintComponent(graphics);
 	    _graphics=graphics;
 	    _window.draw();
 	}
 
     }
 
-    protected AwtWindow(String title, Window window) {
+    protected SwingWindow(String title, Window window) {
 	_window=window;
-	_frame=new Frame(title);
-	_frame.setMenuBar(new MenuBar());
-	_frame.setSize(width,height);
-	_frame.setVisible(true);
-	_fm=_frame.getGraphics().getFontMetrics();
-	_color=_frame.getGraphics().getColor();
-	_frame.addWindowListener(new WindowAdapter() {
-		public void windowClosing(WindowEvent we) { System.exit(0); }
-	    });
-   }
+	JFrame.setDefaultLookAndFeelDecorated(true);
+	_jFrame=new JFrame(title);
+	_jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	_jFrame.setJMenuBar(new JMenuBar());
+	_jFrame.setSize(width,height);
+	_jFrame.setVisible(true);
+	_fm=_jFrame.getGraphics().getFontMetrics();
+	_color=_jFrame.getGraphics().getColor();
+    }
 
     public int charWidth(char c) {
 	return _fm.charWidth(c);
@@ -65,16 +65,15 @@ class AwtWindow extends WindowImp {
 
     public void setContents() {
 	_pane=new Pane();
-	_frame.removeAll();
-	_frame.add(_pane);
-	_frame.setVisible(true);
+	_jFrame.setContentPane(_pane);
+	_jFrame.setVisible(true);
     }
 
     public void addBorder(int x1, int y1, int x2, int y2, int width) {
-	_graphics.fillRect(x1,y1,x2-x1,width);             // top
-	_graphics.fillRect(x1,y1,width,y2-y1-width);       // left
-	_graphics.fillRect(x2-width,y1,width,y2-y1);       // right
-	_graphics.fillRect(x1,y2-width,x2-x1,width);       // bottom
+	_graphics.fillRect(x1,y1,x2-x1,width);                     // top
+	_graphics.fillRect(x1,y1+width,width,y2-y1-2*width);       // left
+	_graphics.fillRect(x2-width,y1+width,width,y2-y1-2*width); // right
+	_graphics.fillRect(x1,y2-width,x2-x1,width);               // bottom
     }
 
     public void addScrollBar(int x, int y, int width, int height) {
@@ -103,4 +102,3 @@ class AwtWindow extends WindowImp {
     }
 
 }
-

@@ -1,6 +1,8 @@
 package lexi;
 import java.awt.Point;
 import javax.naming.OperationNotSupportedException;
+import lexiwindow.Window;
+
 
 
 public abstract class Composition extends CompositeGlyph {

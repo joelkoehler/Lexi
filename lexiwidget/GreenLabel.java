@@ -4,7 +4,7 @@ import java.awt.Point;
 import lexi.Compositor;
 import java.util.ArrayList;
 import lexi.Glyph;
-import lexi.Window;
+import lexiwindow.Window;
 
 public class GreenLabel extends Label {
     
