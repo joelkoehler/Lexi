@@ -1,5 +1,8 @@
 package lexi;
 import javax.naming.OperationNotSupportedException;
+
+import lexiwindow.Window;
+
 import java.awt.Point;
 
 public abstract class Glyph {

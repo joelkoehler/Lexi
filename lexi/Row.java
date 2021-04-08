@@ -2,6 +2,8 @@ package lexi;
 import java.awt.Point;
 import javax.naming.OperationNotSupportedException;
 import java.util.ArrayList;
+import lexiwindow.Window;
+
 
 public class Row extends Composition {
 

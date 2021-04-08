@@ -1,6 +1,8 @@
 package lexi;
 import java.awt.Point;
 import java.util.ArrayList;
+import lexiwindow.Window;
+
 
 
 public class Scroller extends Embellishment {

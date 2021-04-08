@@ -1,6 +1,8 @@
 package lexi;
 import java.awt.Point;
 
+import lexiwindow.Window;
+
 public class Character extends Glyph {
     private char c;
 

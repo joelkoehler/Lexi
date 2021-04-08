@@ -1,5 +1,7 @@
 package lexi;
 import java.awt.Point;
+import lexiwindow.Window;
+
 
 public class Rectangle extends Glyph {
 
