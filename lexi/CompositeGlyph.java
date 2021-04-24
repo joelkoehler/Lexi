@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javax.naming.OperationNotSupportedException;
 
 import lexiwindow.Window;
+import java.awt.Point;
 
 public abstract class CompositeGlyph extends Glyph {
     
@@ -46,4 +47,12 @@ public abstract class CompositeGlyph extends Glyph {
         return children.get(position);
     }
 
+    // public Glyph getClicked(Point point) {
+    //     for(Glyph child : children) {
+    //         if(child != null && child.intersects(point)) {
+    //             return child.getClicked(point);
+    //         }
+    //     }
+    //     return null;
+    // }
 }

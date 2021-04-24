@@ -1,14 +1,20 @@
 package lexi;
 import javax.naming.OperationNotSupportedException;
 
+import lexicommand.Command;
 import lexiwindow.Window;
 
 import java.awt.Point;
+
+// Command(223): Receiver
+// ChainOfResponsibility(223): Handler
+// ChainOfResponsibility(223): ConcreteHandler
 
 public abstract class Glyph {
 
     private Glyph parent;
     private Bounds bounds = new Bounds(new Point(0,0), 0 ,0);
+    private Command command = null;
 
     public abstract void draw(Window window);
     public Bounds getBounds() {
@@ -50,4 +56,13 @@ public abstract class Glyph {
     public abstract void setSize(Window window);
     // public abstract void setPosition(int x, int y); 
     // public abstract void moveCursor(Point cursor, Glyph child);
+
+    public Glyph onClick(Point point) {
+        return null;
+    }
+
+    public Command getCommand() {
+        return command;
+    }
+
 }

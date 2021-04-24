@@ -1,7 +1,6 @@
 package lexiwindow;
 
 // Bridge(151): Implementor
-// AbstractFactory(87): AbstractProduct
 
 public interface WindowImp {
 
@@ -18,5 +17,10 @@ public interface WindowImp {
 
     void drawButton(int x, int y, int width, int height, String color);
     void drawLabel(int x, int y, int width, int height, String color);
+
+    int getFontSize();
+    void setFontSize(int size);
+
+    void repaint();
 
 }

@@ -4,13 +4,14 @@ import java.awt.Point;
 import lexi.Compositor;
 import java.util.ArrayList;
 import lexi.Glyph;
+import lexicommand.Command;
 import lexiwindow.Window;
 
 
 public class GreenButton extends Button {
 
-    protected GreenButton(Compositor compositor) {
-        //super(content);
+    protected GreenButton(Compositor compositor, Glyph content, Command command) {
+        super(content, command);
         setParent(null);
         getBounds().setDims(0,0);
         getBounds().point().setLocation(new Point(0,0));

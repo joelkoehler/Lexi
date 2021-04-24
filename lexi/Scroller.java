@@ -9,7 +9,8 @@ public class Scroller extends Embellishment {
 
     private int w = 10;
     
-    public Scroller (Compositor compositor) {
+    public Scroller(Compositor compositor, Glyph content) {
+        super(content);
         super.setParent(null);
         super.getBounds().setDims(0,0);
         Point point = new Point(0,0);

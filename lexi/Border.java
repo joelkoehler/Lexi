@@ -10,7 +10,8 @@ public class Border extends Embellishment {
     
     private int thickness;
 
-    public Border (Compositor compositor, int thickness) {
+    public Border (Compositor compositor, Glyph content, int thickness) {
+        super(content);
         this.thickness = thickness;
         super.setParent(null);
         super.getBounds().setDims(0,0);

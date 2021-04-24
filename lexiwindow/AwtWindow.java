@@ -18,19 +18,42 @@ class AwtWindow implements WindowImp {
     private Frame _frame;
     private Color _color;
     private Graphics _graphics;
+    private Font _font=null;
     private FontMetrics _fm;
+
+    private class PaneKeyListener implements KeyListener {
+	public void keyTyped(KeyEvent e) {
+	    _window.key(e.getKeyChar());
+	}
+	public void keyPressed(KeyEvent e) {}
+	public void keyReleased(KeyEvent e) {}
+    }
+
+    private class PaneMouseListener implements MouseListener {
+	public void mouseClicked(MouseEvent e) {
+	    _window.click(e.getX(),e.getY());
+	}
+	public void mousePressed(MouseEvent e) {}
+	public void mouseReleased(MouseEvent e) {}
+	public void mouseEntered(MouseEvent e) {}
+	public void mouseExited(MouseEvent e) {}
+    }
 
     private class Pane extends Panel {
 
 	public void paint(Graphics graphics) {
 	    super.paint(graphics);
 	    _graphics=graphics;
+	    if (_font!=null) {
+		_graphics.setFont(_font);
+		_fm=_graphics.getFontMetrics();
+	    }
 	    _window.draw();
 	}
 
     }
 
-    protected AwtWindow(String title, Window window) {
+    public AwtWindow(String title, Window window) {
 	_window=window;
 	_frame=new Frame(title);
 	_frame.setMenuBar(new MenuBar());
@@ -41,7 +64,7 @@ class AwtWindow implements WindowImp {
 	_frame.addWindowListener(new WindowAdapter() {
 		public void windowClosing(WindowEvent we) { System.exit(0); }
 	    });
-   }
+    }
 
     public int charWidth(char c) {
 	return _fm.charWidth(c);
@@ -67,6 +90,10 @@ class AwtWindow implements WindowImp {
 	_pane=new Pane();
 	_frame.removeAll();
 	_frame.add(_pane);
+	_pane.addMouseListener(new PaneMouseListener());
+	_pane.addKeyListener(new PaneKeyListener());
+	_pane.setFocusable(true);
+	_pane.requestFocusInWindow();
 	_frame.setVisible(true);
     }
 
@@ -102,5 +129,28 @@ class AwtWindow implements WindowImp {
 	_graphics.setColor(_color);
     }
 
-}
+    public int getFontSize() {
+	Font font;
+	if (_font!=null)
+	    font=_font;
+	else
+	    font=_pane.getGraphics().getFont();
+	return font.getSize();
+    }
+	
+    public void setFontSize(int size) {
+	if (size>0) {
+	    Font font;
+	    if (_font!=null)
+		font=_font;
+	    else
+		font=_pane.getGraphics().getFont();
+	    _font=new Font(font.getFamily(),font.getStyle(),size);
+	    _graphics.setFont(_font);
+	    _fm=_graphics.getFontMetrics();
+	}
+    }
 
+    public void repaint() { _pane.repaint(); }
+
+}

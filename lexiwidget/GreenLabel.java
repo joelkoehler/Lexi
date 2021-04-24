@@ -8,8 +8,8 @@ import lexiwindow.Window;
 
 public class GreenLabel extends Label {
     
-    protected GreenLabel(Compositor compositor) {
-        //super(content);
+    protected GreenLabel(Compositor compositor, Glyph content) {
+        super(content);
         setParent(null);
         getBounds().setDims(0,0);
         getBounds().point().setLocation(new Point(0,0));

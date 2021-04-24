@@ -8,8 +8,8 @@ import lexiwindow.Window;
 
 public class RedLabel extends Label {
     
-    protected RedLabel(Compositor compositor) {
-        //super(content);
+    protected RedLabel(Compositor compositor, Glyph content) {
+        super(content);
         setParent(null);
         getBounds().setDims(0,0);
         getBounds().point().setLocation(new Point(0,0));

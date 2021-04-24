@@ -7,9 +7,9 @@ import lexiwindow.Window;
 
 public class Embellishment extends Composition {
 
-    // public Embellishment(Glyph contents) {
-	// 	super();
-	// }
+    public Embellishment(Glyph contents) {
+		super();
+	}
 
     public void compose() {
         super.compose();        

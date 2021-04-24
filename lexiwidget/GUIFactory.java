@@ -1,6 +1,8 @@
 package lexiwidget;
 
 import lexi.Compositor;
+import lexi.Glyph;
+import lexicommand.Command;
 
 // this is the abstract factory
 public abstract class GUIFactory {
@@ -25,16 +27,16 @@ public abstract class GUIFactory {
         return single;
     }
 
-    public final Button createButton(Compositor compositor) {
-        return buttonFactoryMethod(compositor);
+    public final Button createButton(Compositor compositor, Glyph content, Command command) {
+        return buttonFactoryMethod(compositor, content, command);
     }
 
-    public final Label createLabel(Compositor compositor) {
-        return labelFactoryMethod(compositor);
+    public final Label createLabel(Compositor compositor, Glyph content) {
+        return labelFactoryMethod(compositor, content);
     }
     
     // these are the factory methods that will be made concrete in the subclasses
-    protected abstract Label labelFactoryMethod(Compositor compositor);
-    protected abstract Button buttonFactoryMethod(Compositor compositor);
+    protected abstract Label labelFactoryMethod(Compositor compositor, Glyph content);
+    protected abstract Button buttonFactoryMethod(Compositor compositor, Glyph content, Command command);
 
 }
