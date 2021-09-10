@@ -1,6 +1,10 @@
 ## Description
 Lexi is a graphical WYSIWYG document editor based on the case study presented in The Gang of Four's Design Patterns book. 
 
+* Author: Joel Koehler
+* Class: CS472 (Object-Oriented Design Patterns)
+* Semester: Spring '21
+
 ### Object-Oriented Design Patterns Used
 * Composite (163) - composition
 * Strategy (315) - formatting. 
@@ -14,10 +18,3 @@ Lexi is a graphical WYSIWYG document editor based on the case study presented in
 $ javac *.java
 $ LexiWindow="x" LexiWidget="y" java Lexi
     (where x is either "Swing" or "Awt", and y is either "Red" or "Green")
-
-
-Name: Joel Koehler
-Class: CS472 (Object-Oriented Design Patterns)
-Instructor: Jim B.
-Assignment: HW4 - Lexi
-Semester: Spring '21
