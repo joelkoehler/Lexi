@@ -8,7 +8,7 @@ Lexi is a graphical WYSIWYG document editor based on the case study presented in
 ### Object-Oriented Design Patterns Used
 * Composite (163) - composition
 * Strategy (315) - formatting. 
-* AbstractFactory(87), Factory Method (107) and Singelton(127) - look & feel
+* AbstractFactory (87), Factory Method (107) and Singelton (127) - look & feel
 * Bridge (151) - allows for Swing or Awt windowing systems
 * Command (233)
 * Prototype (117)
